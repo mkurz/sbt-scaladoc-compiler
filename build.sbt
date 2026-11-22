@@ -7,11 +7,13 @@ organization := "cchantep"
 version := "0.9"
 
 scalaVersion := "2.12.21"
+
 crossScalaVersions := Vector("2.12.21", "3.9.0")
 
 pluginCrossBuild / sbtVersion := {
   if (scalaBinaryVersion.value == "2.12") "1.12.3" else "2.1.0"
 }
+
 scalacOptions ++= {
   if (scalaBinaryVersion.value == "2.12") Seq("-Xsource:3", "-release:8")
   else Nil
